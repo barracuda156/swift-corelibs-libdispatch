@@ -25,8 +25,16 @@
 #ifdef KERNEL
 #include <stdint.h>
 #else
+#ifdef __APPLE__
+#include <AvailabilityMacros.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED > 101400
 #include <os/base.h>
 #include <os/availability.h>
+#else
+#include <dispatch/base.h>
+#include <Availability.h>
+#endif
+#endif
 #include <os/base_private.h>
 #include <dispatch/dispatch.h>
 #endif

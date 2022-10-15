@@ -23,9 +23,14 @@
 
 #ifdef __APPLE__
 #include <Availability.h>
-#include <os/availability.h>
+#include <AvailabilityMacros.h>
 #include <TargetConditionals.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED > 101400
+#include <os/availability.h>
 #include <os/base.h>
+#else
+#include <dispatch/base.h>
+#endif
 #elif defined(_WIN32)
 #include <os/generic_win_base.h>
 #elif defined(__unix__)

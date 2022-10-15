@@ -27,8 +27,13 @@
 #include <firehose/tracepoint_private.h>
 #endif
 #if __APPLE__
+#include <AvailabilityMacros.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED > 101400
 #include <os/base.h>
 #include <os/availability.h>
+#else
+#include <dispatch/base.h>
+#include <Availability.h>
 #endif
 #include <sys/uio.h>
 #include <os/object.h>

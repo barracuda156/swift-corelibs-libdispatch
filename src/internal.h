@@ -38,8 +38,11 @@
 
 #ifdef __APPLE__
 #include <Availability.h>
-#include <os/availability.h>
+#include <AvailabilityMacros.h>
 #include <TargetConditionals.h>
+#if MAC_OS_X_VERSION_MIN_REQUIRED > 101400
+#include <os/availability.h>
+#endif
 #endif // __APPLE__
 
 
