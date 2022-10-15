@@ -100,7 +100,7 @@ function(add_unit_test name)
                         PRIVATE
                           dispatch
                           Threads::Threads
-                          BlocksRuntime::BlocksRuntime)
+                          BlocksRuntime)
   target_link_libraries(${name} PRIVATE bsdtests)
   add_test(NAME ${name}
            COMMAND bsdtestharness $<TARGET_FILE:${name}>)

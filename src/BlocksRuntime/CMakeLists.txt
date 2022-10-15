@@ -22,7 +22,7 @@ endif()
 set_target_properties(BlocksRuntime PROPERTIES
   POSITION_INDEPENDENT_CODE TRUE)
 
-add_library(BlocksRuntime::BlocksRuntime ALIAS BlocksRuntime)
+add_library(BlocksRuntime ALIAS BlocksRuntime)
 
 install(FILES Block.h
         DESTINATION ${INSTALL_BLOCK_HEADERS_DIR})
